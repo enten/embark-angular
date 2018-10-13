@@ -1,10 +1,11 @@
 {
   "contracts": ["contracts/**"],
   "app": {
-    "css/app.css": ["app/css/**"],
-    "js/app.js": ["app/js/index.ts"],
-    "images/": ["app/images/**"],
-    "index.html": "app/index.html"
+    "styles.css": ["src/styles.scss"],
+    "main.js": ["src/main.ts"],
+    "polyfills.js": ["src/polyfills.ts"],
+    "favicon.ico": ["src/favicon.ico"],
+    "assets/": ["src/assets/**"]
   },
   "buildDir": "dist/",
   "config": "config/",
