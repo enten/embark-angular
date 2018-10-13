@@ -1,2 +1,2 @@
-declare const EmbarkJS: any;
-declare const web3: any;
+declare const EmbarkJS: EmbarkJS;
+declare const web3: Web3;
