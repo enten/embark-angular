@@ -47,6 +47,9 @@ declare namespace EmbarkJS {
       unitOrOptions: Web3.Unit | Web3.Transaction,
       options?: Web3.Transaction,
     ): void;
+    methods: {
+      [fnName: string]: (...args: any[]) => Web3.TransactionObject<any>;
+    };
   }
 
 
