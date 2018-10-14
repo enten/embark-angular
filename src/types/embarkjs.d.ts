@@ -90,7 +90,10 @@ declare namespace EmbarkJS {
   // https://github.com/embark-framework/EmbarkJS/blob/master/src/messages.js
   // https://github.com/embark-framework/embark/blob/master/lib/modules/whisper/js/embarkjs.js
   interface Messages extends MessagesProviderAPI {
-    Providers: { [providerName: string]: MessagesProvider };
+    Providers: {
+      [providerName: string]: MessagesProvider;
+      whisper: WhisperProvider;
+    };
     currentProviderName: string;
     currentMessages: MessagesProvider;
     registerProvider(providerName: string, obj: MessagesProvider): void;
@@ -99,6 +102,10 @@ declare namespace EmbarkJS {
 
   interface MessagesProvider extends MessagesProviderAPI {
     setProvider(options?: MessagesProviderOptions): Promise<this>;
+  }
+
+  interface WhisperProvider extends MessagesProvider {
+    getWhisperVersion(callback: (err: Error | null, version: string) => void): void;
   }
 
   interface MessagesProviderAPI {
