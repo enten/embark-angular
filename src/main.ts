@@ -10,12 +10,14 @@ if (environment.production) {
   enableProdMode();
 }
 
-EmbarkJS.onReady(err => {
-  if (err) {
-    return console.error(err);
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  EmbarkJS.onReady(err => {
+    if (err) {
+      return console.error(err);
+    }
 
-  platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch(bsErr => console.error(bsErr));
+    platformBrowserDynamic()
+      .bootstrapModule(AppModule)
+      .catch(bsErr => console.error(bsErr));
+  });
 });
