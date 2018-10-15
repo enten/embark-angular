@@ -780,6 +780,7 @@ declare namespace Web3 {
     value: string;
     gasPrice: string;
     gas: number;
+    gasUsed: number;
     input: string;
     v?: string;
     r?: string;

@@ -133,7 +133,7 @@ declare namespace EmbarkJS {
   }
 
   interface SendMessageOptions {
-    topic: string;
+    topic: string | string[];
     data?: any;
     payload?: any;
     ttl?: number;
@@ -142,7 +142,7 @@ declare namespace EmbarkJS {
   }
 
   interface ListenToOptions {
-    topic: string;
+    topic: string | string[];
     minPow?: any;
     usePrivateKey?: boolean;
     privateKeyID?: any;
@@ -179,7 +179,7 @@ declare namespace EmbarkJS {
     isAvailable(): Promise<boolean>;
     saveText(text: string): Promise<string>;
     get(hash: string): Promise<string>;
-    uploadFile(inputSelector: ({ files: string[] })[]): Promise<string>;
+    uploadFile(inputSelector: HTMLInputElement[]): Promise<string>;
     getUrl(hash: string): string;
     resolve(name: string, callback: (err: Error | null, resPath: string) => void): void;
     register(addr: string, callback?: (err: Error | null, resPath: string) => void): void;
