@@ -1,13 +1,26 @@
 {
-  "name": "embark-angular-template",
-  "version": "0.0.1",
-  "description": "",
+  "name": "embark-angular",
+  "version": "0.1.0",
+  "description": "Angular Decentralized Application with Embark",
+  "license": "MIT",
+  "author": "Steven Enten <steven@enten.fr>",
+  "keywords": [
+    "embark",
+    "angular",
+    "typescript",
+    "dapp"
+  ],
+  "homepage": "https://github.com/enten/embark-angular",
+  "bugs": {
+    "url": "https://github.com/enten/embark-angular/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enten/embark-angular"
+  },
   "scripts": {
     "test": "embark test"
   },
-  "author": "",
-  "license": "ISC",
-  "homepage": "",
   "dependencies": {
     "@angular/animations": "~7.0.0-rc.1",
     "@angular/common": "~7.0.0-rc.1",
