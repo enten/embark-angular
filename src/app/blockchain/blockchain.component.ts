@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
-import SimpleStorage from 'Embark/contracts/SimpleStorage';
+import { SIMPLE_STORAGE } from '../contracts.tokens';
 
 @Component({
   selector: 'app-blockchain',
@@ -67,6 +67,10 @@ export class BlockchainComponent {
   valueGet = '';
   logs: string[] = [];
 
+  constructor(
+    @Inject(SIMPLE_STORAGE) readonly simpleStorage: EmbarkContracts.SimpleStorage,
+  ) { }
+
   handleChange(e: Event) {
     const input = e.target as HTMLButtonElement;
 
@@ -78,7 +82,7 @@ export class BlockchainComponent {
 
     this.valueGet = 'Pending...';
 
-    SimpleStorage.methods.get().call().then(value => {
+    this.simpleStorage.methods.get().call().then(value => {
       this.valueGet = value;
 
       this._addToLog(`console.log(${value})`);
@@ -92,7 +96,7 @@ export class BlockchainComponent {
 
     const value = parseInt(this.valueSet, 10);
 
-    SimpleStorage.methods.set(value).send().then(receipt => {
+    this.simpleStorage.methods.set(value).send().then(receipt => {
       this._addToLog(`transaction hash: ${receipt.transactionHash}`);
     });
 

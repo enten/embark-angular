@@ -2,6 +2,12 @@ declare const EmbarkJS: EmbarkJS;
 declare const web3: Web3;
 
 declare module 'Embark/contracts/SimpleStorage' {
+  const SimpleStorage: EmbarkContracts.SimpleStorage
+
+  export default SimpleStorage;
+}
+
+declare namespace EmbarkContracts {
   interface SimpleStorage {
     methods: {
       get(): Web3.TransactionObject<string>,
@@ -9,8 +15,4 @@ declare module 'Embark/contracts/SimpleStorage' {
       storedData(): Web3.TransactionObject<string>,
     }
   }
-
-  const SimpleStorage: SimpleStorage
-
-  export default SimpleStorage;
 }

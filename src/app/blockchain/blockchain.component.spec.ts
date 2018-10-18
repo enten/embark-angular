@@ -1,14 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
+import { SIMPLE_STORAGE } from '../contracts.tokens';
 import { BlockchainComponent } from './blockchain.component';
 
 describe('BlockchainComponent', () => {
   let component: BlockchainComponent;
   let fixture: ComponentFixture<BlockchainComponent>;
+  const simpleStorage = {};
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockchainComponent ]
+      declarations: [ BlockchainComponent ],
+      providers: [
+        {
+          provide: SIMPLE_STORAGE,
+          useValue: simpleStorage,
+        },
+      ],
     })
     .compileComponents();
   }));

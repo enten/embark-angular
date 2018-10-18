@@ -1,14 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
+import { EMBARKJS } from '../app.tokens';
 import { StorageComponent } from './storage.component';
 
 describe('StorageComponent', () => {
   let component: StorageComponent;
   let fixture: ComponentFixture<StorageComponent>;
+  const embarkjs = {
+    Storage: {},
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StorageComponent ]
+      declarations: [ StorageComponent ],
+      providers: [
+        {
+          provide: EMBARKJS,
+          useValue: embarkjs,
+        },
+      ],
     })
     .compileComponents();
   }));

@@ -21,6 +21,19 @@
   "scripts": {
     "test": "embark test"
   },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts",
+    "coveragePathIgnorePatterns": [
+      "^.+\\.d\\.ts$",
+      "<rootDir>/.storybook/",
+      "<rootDir>/src/jestGlobalMocks.ts",
+      "<rootDir>/src/setupJest.ts"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules"
+    ]
+  },
   "dependencies": {
     "@angular/animations": "~7.0.0-rc.1",
     "@angular/common": "~7.0.0-rc.1",
@@ -42,6 +55,9 @@
     "@types/node": "~10.11.3",
     "@types/webpack-env": "~1.13.6",
     "codelyzer": "^4.5.0",
+    "jest": "^23.6.0",
+    "jest-preset-angular": "^6.0.1",
+    "protractor": "~5.4.1",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.1"
