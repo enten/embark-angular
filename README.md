@@ -1,6 +1,6 @@
 # embark-angular
 
-This project was generated with Embark 3.2.3 and Angular CLI version 7.0.0-rc.3.
+This project was generated with Embark 3.2.3 and Angular CLI version 7.0.2.
 
 ## About
 
