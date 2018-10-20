@@ -15,7 +15,9 @@ This work in progress:
 - [x] build webpack configs dynamically with [angular-devkit browser builder](https://github.com/angular/angular-cli/tree/master/packages/angular_devkit/build_angular/src/browser) ;
 - [x] write typings for `EmbarkJS`  and `web3` globals ;
 - [x] write components example like embark demo ;
-- [ ] make unit and e2e tests works ;
+- [x] setup [Jest](https://jestjs.io) to run unit tests ;
+- [x] setup [Storybook](https://storybook.js.org) ;
+- [ ] make e2e tests works ;
 - [ ] try to enable hmr in dev mode.
 
 ## Getting started
@@ -96,3 +98,15 @@ embark run
 # or
 embark build
 ```
+
+## Running contracts tests
+
+Run `embark test` to execute the contracts tests via [embark](https://embark.status.im/docs/contracts_testing.html).
+
+## Running unit tests
+
+Run `npx jest` to execute the unit tests via [Jest](https://jestjs.io).
+
+## Running Storybook
+
+Run `npm run storybook` to run the [Storybook](https://storybook.js.org).
